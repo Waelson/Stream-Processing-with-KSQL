@@ -12,7 +12,6 @@ from faker import Faker
 faker = Faker()
 
 BROKER_URL = "PLAINTEXT://localhost:29092"
-TOPIC_NAME = "com.mywebsite.streams.clickevents"
 
 TOPIC_PAGE = "com.mywebsite.streams.pages"
 TOPIC_EVENT = "com.mywebsite.streams.clickevents"
@@ -57,19 +56,6 @@ def produce():
         )
         print(f"Message: {json_str}")
         time.sleep(0.1)
-
-
-def create_topic(client):
-    """Creates the topic with the given topic name"""
-    client = AdminClient({"bootstrap.servers": BROKER_URL})
-    futures = client.create_topics(
-        [NewTopic(topic=TOPIC_NAME, num_partitions=5, replication_factor=1)]
-    )
-    for _, future in futures.items():
-        try:
-            future.result()
-        except Exception as e:
-            pass
 
 
 def main():

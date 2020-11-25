@@ -6,6 +6,8 @@ This project show how to use KSQL (Streaming SQL Engine for Apache Kafka)
 
 For you to use this repository you will need the following softwares:
 
+- [Python](https://www.python.org/downloads/)
+- [Pip](https://pip.pypa.io/en/stable/installing/)
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker Compose](https://docs.docker.com/engine/install/)
 - Zookeeper
@@ -16,16 +18,19 @@ However, only Docker and Docker Compose need is installed in your machine. All K
 
 ## Steps
 
-- Install Docker and Docker Compose
-- Load Images
-- Create Topics
-- Start Simulator
+1. Install Python and Pip
+2. Install Docker and Docker Compose
+3. Load Images
+4. Create Topics
+5. Start Simulator
 
-### 1 - Install Docker and Docker Compose
+### 1 - Install Python and Pip
+
+### 2 - Install Docker and Docker Compose
 
 This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link for more informations. [Please click here](https://docs.docker.com/engine/install/).
 
-### 2 - Loading Images
+### 3 - Loading Images
 
 ```bash
 docker-compose up
@@ -37,17 +42,17 @@ or
 docker-compose up -d
 ```
 
-### 3 - Create Topics
+### 4 - Create Topics
 
 ```bash
-docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.pages --bootstrap-server localhost:29092
+docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.pages --bootstrap-server localhost:9092
 ```
 
 ```bash
-docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.clickevents --bootstrap-server localhost:29092
+docker-compose exec kafka kafka-topics --create --topic com.udacity.streams.clickevents --bootstrap-server localhost:9092
 ```
 
-### 4 - Start Simulator
+### 5 - Start Simulator
 
 ```bash
 python click_simulator.py
@@ -89,13 +94,14 @@ Show all topics
 ```bash
 ksql> SHOW TOPICS;
 
- Kafka Topic                     | Partitions | Partition Replicas
--------------------------------------------------------------------
- com.mywebsite.streams.clickevents | 1          | 1
--------------------------------------------------------------------
+ Kafka Topic                       | Partitions | Partition Replicas
+---------------------------------------------------------------------
+ com.mywebsite.streams.clickevents | 5          | 1
+ com.mywebsite.streams.pages       | 1          | 1
+---------------------------------------------------------------------
 ```
 
-Show all streams;
+Show all streams
 
 ```bash
 ksql> SHOW STREAMS;
