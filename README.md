@@ -1,6 +1,6 @@
-# Streaming Processing with KSQL
+# Stream Processing using KSQL
 
-This project show how to use KSQL (Streaming SQL Engine for Apache Kafka)
+This project show how to use KSQL (Streaming SQL Engine for Apache Kafka) to stream processing.
 
 ## Enviroment
 
