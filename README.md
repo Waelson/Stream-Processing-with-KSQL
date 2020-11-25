@@ -12,7 +12,7 @@ For you to use this repository you will need the following software:
 - Kafka
 - KSQL Server
 
-However, only Docker and Docker Compose need is installed in your machine. All Kafka ecosystem is embedded via docker images.
+However, only Docker and Docker Compose need is installed in your machine. All Kafka ecosystem will be embedded via docker images.
 
 ## Install Softwares
 
@@ -25,6 +25,16 @@ or
 ```bash
 docker-compose up -d
 ```
+
+## First Interactions
+
+In this tutorial you will be interact with Kafka Software Ecosystem ever through 'docker-compose'.
+
+### Creating a Kafka Topic
+
+To create a
+
+### Creating a Stream
 
 If you need run it in the background mode.
 
