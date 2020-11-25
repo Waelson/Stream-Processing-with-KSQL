@@ -74,7 +74,12 @@ ksql>
 Show all topics
 
 ```bash
-ksql> SHOW TOPIC;
+ksql> SHOW TOPICS;
+
+ Kafka Topic                     | Partitions | Partition Replicas
+-------------------------------------------------------------------
+ com.mywebsite.streams.clickevents | 1          | 1
+-------------------------------------------------------------------
 ```
 
 Show all streams;
