@@ -59,7 +59,7 @@ docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.pa
 ```
 
 ```bash
-docker-compose exec kafka kafka-topics --create --topic com.udacity.streams.clickevents --bootstrap-server localhost:9092
+docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.clickevents --bootstrap-server localhost:9092
 ```
 
 ### 5 - Start Simulator
