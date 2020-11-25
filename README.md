@@ -208,6 +208,21 @@ Once you're done querying or creating tables or streams with this value, you can
 UNSET 'auto.offset.reset';
 ```
 
+### Scalar Functions
+
+KSQL Provides a number of [Scalar functions for us to make use of](https://docs.confluent.io/current/ksql/docs/developer-guide/syntax-reference.html#scalar-functions).
+
+Lets write a function that takes advantage of some of these features:
+
+```bash
+SELECT UCASE(SUBSTRING(uri, 12))
+  FROM clickevents
+  WHERE number > 100
+    AND uri LIKE 'http://www.k%' EMIT CHANGES;
+```
+
+Notice that as soon as you hit CTRL+C your query ends
+
 ### Deleting a Table
 
 As with Streams, we must first find the running underlying query, and then drop the table.
