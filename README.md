@@ -170,6 +170,23 @@ CREATE TABLE a_pages AS
   SELECT * FROM pages WHERE uri LIKE 'http://www.a%';
 ```
 
+### Describing a Table and Stream
+
+```bash
+ksql> DESCRIBE PAGES;
+
+Name                 : PAGES
+ Field       | Type
+-----------------------------------------
+ ROWTIME     | BIGINT           (system)
+ ROWKEY      | VARCHAR(STRING)  (system)
+ URI         | VARCHAR(STRING)
+ DESCRIPTION | VARCHAR(STRING)
+ CREATED     | VARCHAR(STRING)
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
 ## Kafka CLI Basic Commands
 
 ### Creating a topic:
