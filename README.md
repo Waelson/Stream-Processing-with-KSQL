@@ -26,7 +26,7 @@ However, only Docker and Docker Compose need is installed in your machine. All K
 
 ### 1 - Install Python and Pip
 
-The installation process of the Python and Pip is very easy, so this tutorial dont't will cover this steps. I recommend you look for more information in [www.python.org](https://www.python.org/downloads/) and [pip.pypa.io](https://pip.pypa.io/en/stable/installing/).
+The installation process of the Python and Pip is very easy. So this tutorial dont't will cover this steps. I recommend you look for more information in [www.python.org](https://www.python.org/downloads/) and [pip.pypa.io](https://pip.pypa.io/en/stable/installing/).
 
 After you install Python and Pip run the command below to install all dependencies need to execute <code>click_simulator.py</code>.
 
