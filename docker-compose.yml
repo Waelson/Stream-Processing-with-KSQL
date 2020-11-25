@@ -2,11 +2,11 @@ version: '2'
 services:
 
   ksql:    
-    image: confluentinc/cp-ksql-server
+    image: confluentinc/cp-ksql-server:5.4.0
     ports:
       - '8088:8088'
     environment:
-      KSQL_LISTENERS: http://ksql:8088/
+      KSQL_LISTENERS: http://localhost:8088/
       KSQL_KSQL_SERVICE_ID: ksql_service_2
       KSQL_BOOTSTRAP_SERVERS: kafka:9092
     depends_on:

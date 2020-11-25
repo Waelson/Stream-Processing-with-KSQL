@@ -170,6 +170,36 @@ CREATE TABLE a_pages AS
   SELECT * FROM pages WHERE uri LIKE 'http://www.a%';
 ```
 
+### Querying a Table or Stream
+
+```SQL
+SELECT * FROM clickevents EMIT CHANGES;
+```
+
+### Deleting a Table
+
+As with Streams, we must first find the running underlying query, and then drop the table.
+First, find your query:
+
+```bash
+ksql> SHOW QUERIES;
+
+ Query ID                | Kafka Topic      | Query String
+----------------------------------------------------------------------------------------------
+  CTAS_A_PAGES_1      | A_PAGES      | CREATE TABLE a_pages AS
+    SELECT * FROM pages WHERE uri LIKE 'http://www.a%';
+----------------------------------------------------------------------------------------------
+For detailed information on a Query run: EXPLAIN <Query ID>;
+```
+
+Find your query, which in this case is CTAS_A_PAGES_1
+and then, finally, TERMINATE the query and DROP the table:
+
+```bash
+TERMINATE QUERY CTAS_A_PAGES_1;
+DROP TABLE A_PAGES;
+```
+
 ### Describing a Table and Stream
 
 ```bash
