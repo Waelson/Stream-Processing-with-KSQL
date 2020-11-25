@@ -14,7 +14,7 @@ For you to use this repository you will need the following software:
 
 However, only Docker and Docker Compose need is installed in your machine. All Kafka ecosystem is embedded via docker images.
 
-## Usage
+## Install Softwares
 
 ```bash
 docker-compose up
@@ -26,4 +26,14 @@ or
 docker-compose up -d
 ```
 
-If you need run it in background.
+If you need run it in the background mode.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
