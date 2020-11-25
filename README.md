@@ -193,6 +193,21 @@ Name                 : PAGES
 For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
 ```
 
+### Managing Offsets
+
+Like all Kafka Consumers, KSQL by default begins consumption <i>at the latest offset</i>. This can be a problem for some scenarios. In the following example we're going to create a pages table -- but -- we want <i>all</i> the data available to us in this table. In other words, we want KSQL to start from the earliest offset. To do this, we will use the <code>SET</code> command to set the configuration variabl <code>auto.offset.reset</code> for our session -- and before we run any commands.
+
+```bash
+SET 'auto.offset.reset' = 'earliest';
+```
+
+Also note that this can be set at the KSQL server level, if you'd like.
+Once you're done querying or creating tables or streams with this value, you can set it back to its original setting by simply running:
+
+```bash
+UNSET 'auto.offset.reset';
+```
+
 ### Deleting a Table
 
 As with Streams, we must first find the running underlying query, and then drop the table.
