@@ -21,11 +21,11 @@ However, only Docker and Docker Compose need is installed in your machine. All K
 - Create Topics
 - Start Simulator
 
-## Install Docker and Docker Compose
+### 1 - Install Docker and Docker Compose
 
 This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link for more informations. [Please click here](https://docs.docker.com/engine/install/).
 
-## Loading Images
+### 2 - Loading Images
 
 ```bash
 docker-compose up
@@ -37,17 +37,23 @@ or
 docker-compose up -d
 ```
 
-## First Interactions
-
-In this tutorial you will be interacting with Kafka software ecosystem ever through 'docker-compose'.
-
-### Creating a Kafka Topic
+### 3 - Create Topics
 
 ```bash
-docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.clickevents --bootstrap-server localhost:9092
+docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.pages --bootstrap-server localhost:29092
 ```
 
-### Connecting to KSQL Server
+```bash
+docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.clickevents --bootstrap-server localhost:29092
+```
+
+### 4 - Start Simulator
+
+```bash
+python click_simulator.py
+```
+
+## Connecting to KSQL Server
 
 ```bash
 docker-compose exec ksql ksql http://localhost:8088
