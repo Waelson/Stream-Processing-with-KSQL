@@ -141,7 +141,7 @@ ksql> SHOW STREAMS;
 
 If you need run it in the background mode.
 
-```bash
+```SQL
 CREATE STREAM clickevents
   (email VARCHAR,
   timestamp VARCHAR,
@@ -150,6 +150,36 @@ CREATE STREAM clickevents
 WITH (KAFKA_TOPIC='com.mywebsite.streams.clickevents',
   VALUE_FORMAT='JSON');
 ```
+
+### Creating a Table
+
+```SQL
+CREATE TABLE pages
+  (uri VARCHAR,
+   description VARCHAR,
+   created VARCHAR)
+  WITH (KAFKA_TOPIC='com.mywebsite.streams.pages',
+        VALUE_FORMAT='JSON',
+        KEY='uri');
+```
+
+### Creating a Table from a Query
+
+```SQL
+CREATE TABLE a_pages AS
+  SELECT * FROM pages WHERE uri LIKE 'http://www.a%';
+```
+
+If you need run it in the background mode.
+
+```bash
+CREATE STREAM clickevents
+  (email VARCHAR,
+  timestamp VARCHAR,
+  uri VARCHAR,
+  number INTEGER)
+WITH (KAFKA_TOPIC='com.mywebsite.streams.clickevents',
+  VALUE_F
 
 ## Contributing
 
@@ -160,3 +190,4 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+```
