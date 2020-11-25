@@ -170,6 +170,28 @@ CREATE TABLE a_pages AS
   SELECT * FROM pages WHERE uri LIKE 'http://www.a%';
 ```
 
+## Kafka CLI Basic Commands
+
+### Creating a topic:
+
+```bash
+docker-compose exec kafka kafka-topics --create --topic <topic-name> --bootstrap-server localhost:9092
+```
+
+### Writing a topic:
+
+```bash
+docker-compose exec kafka kafka-console-producer --topic <topic-name> --bootstrap-server localhost:9092
+```
+
+You must type on console the press key enter.
+
+### Reading a topic:
+
+```bash
+docker-compose exec kafka kafka-console-consumer.sh --topic <topic-name> --from-beginning --bootstrap-server localhost:9092
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
