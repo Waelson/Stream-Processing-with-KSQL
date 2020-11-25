@@ -28,7 +28,7 @@ However, only Docker and Docker Compose need is installed in your machine. All K
 
 The installation process of the Python and Pip is very easy. So this tutorial dont't will cover this steps. I recommend you look for more information in [www.python.org](https://www.python.org/downloads/) and [pip.pypa.io](https://pip.pypa.io/en/stable/installing/).
 
-After you install Python and Pip run the command below to install all dependencies need to execute <code>click_simulator.py</code>.
+After you install Python and Pip run the command below to install all dependencies need to execute <code>click_simulator.py</code> application. This code is responsible to simulate the click events into an web page. It will generate unbounded click events, sending a flow continuous messages to a Kafka topic.
 
 ```bash
 pip install -r requirements.txt
