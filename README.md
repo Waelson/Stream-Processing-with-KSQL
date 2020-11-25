@@ -170,17 +170,6 @@ CREATE TABLE a_pages AS
   SELECT * FROM pages WHERE uri LIKE 'http://www.a%';
 ```
 
-If you need run it in the background mode.
-
-```bash
-CREATE STREAM clickevents
-  (email VARCHAR,
-  timestamp VARCHAR,
-  uri VARCHAR,
-  number INTEGER)
-WITH (KAFKA_TOPIC='com.mywebsite.streams.clickevents',
-  VALUE_F
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -190,4 +179,7 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+```
+
 ```
