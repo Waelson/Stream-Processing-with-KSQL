@@ -69,6 +69,20 @@ Having trouble? Type 'help' (case-insensitive) for a rundown of how things work!
 ksql>
 ```
 
+#### Some Commands
+
+Show all topics
+
+```bash
+ksql> SHOW TOPIC;
+```
+
+Show all streams;
+
+```bash
+ksql> SHOW STREAMS;
+```
+
 ### Creating a Stream
 
 If you need run it in the background mode.
