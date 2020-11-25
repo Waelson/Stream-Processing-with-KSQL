@@ -14,6 +14,9 @@ faker = Faker()
 BROKER_URL = "PLAINTEXT://localhost:29092"
 TOPIC_NAME = "com.mywebsite.streams.clickevents"
 
+TOPIC_PAGE = "com.mywebsite.streams.pages"
+TOPIC_EVENT = "com.mywebsite.streams.clickevents"
+
 
 @dataclass
 class Page:
@@ -37,7 +40,7 @@ def produce():
     pages = [Page() for _ in range(500)]
     for page in pages:
         p.produce(
-            TOPIC_NAME,
+            TOPIC_PAGE,
             value=json.dumps(asdict(page)),
             key=page.uri,
         )
@@ -48,7 +51,7 @@ def produce():
         click = ClickEvent(uri=page.uri)
         json_str = json.dumps(asdict(click))
         p.produce(
-            TOPIC_NAME,
+            TOPIC_EVENT,
             value=json_str,
             key=click.uri,
         )
@@ -72,7 +75,7 @@ def create_topic(client):
 def main():
     print(f"Starting application")
     """Checks for topic and creates the topic if it does not exist"""
-    create_topic(TOPIC_NAME)
+    # create_topic(TOPIC_NAME)
     try:
         produce()
     except KeyboardInterrupt as e:

@@ -14,6 +14,13 @@ For you to use this repository you will need the following softwares:
 
 However, only Docker and Docker Compose need is installed in your machine. All Kafka ecosystem will be embedded via docker images.
 
+## Steps
+
+- Install Docker and Docker Compose
+- Load Images
+- Create Topics
+- Start Simulator
+
 ## Install Docker and Docker Compose
 
 This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link for more informations. [Please click here](https://docs.docker.com/engine/install/).
