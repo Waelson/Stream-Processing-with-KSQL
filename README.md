@@ -26,6 +26,8 @@ However, only Docker and Docker Compose need is installed in your machine. All K
 
 ### 1 - Install Python and Pip
 
+The installation process of the Python and Pip is very easy, so this tutorial dont't will cover this steps. I recommend you look for more information in [www.python.org](https://www.python.org/downloads/) and [pip.pypa.io](https://pip.pypa.io/en/stable/installing/).
+
 ### 2 - Install Docker and Docker Compose
 
 This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link for more informations. [Please click here](https://docs.docker.com/engine/install/).
