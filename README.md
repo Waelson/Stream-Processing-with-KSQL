@@ -4,7 +4,7 @@ This project show how to use KSQL (Streaming SQL Engine for Apache Kafka)
 
 ## Enviroment
 
-For you to use this repository you will need the following software:
+For you to use this repository you will need the following softwares:
 
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker Compose](https://docs.docker.com/engine/install/)
@@ -16,7 +16,7 @@ However, only Docker and Docker Compose need is installed in your machine. All K
 
 ## Install Docker and Docker Compose
 
-This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link. [Please click here](https://docs.docker.com/engine/install/).
+This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link for more informations. [Please click here](https://docs.docker.com/engine/install/).
 
 ## Loading Images
 
@@ -32,11 +32,42 @@ docker-compose up -d
 
 ## First Interactions
 
-In this tutorial you will be interact with Kafka Software Ecosystem ever through 'docker-compose'.
+In this tutorial you will be interacting with Kafka software ecosystem ever through 'docker-compose'.
 
 ### Creating a Kafka Topic
 
-To create a
+```bash
+docker-compose exec kafka kafka-topics --create --topic com.mywebsite.streams.clickevents --bootstrap-server localhost:9092
+```
+
+### Connecting to KSQL Server
+
+```bash
+docker-compose exec ksql ksql http://localhost:8088
+```
+
+After you connect to KSQL Server you will see below image:
+
+```bash
+                  ===========================================
+                  =        _  __ _____  ____  _             =
+                  =       | |/ // ____|/ __ \| |            =
+                  =       | ' /| (___ | |  | | |            =
+                  =       |  <  \___ \| |  | | |            =
+                  =       | . \ ____) | |__| | |____        =
+                  =       |_|\_\_____/ \___\_\______|       =
+                  =                                         =
+                  =  Streaming SQL Engine for Apache Kafka® =
+                  ===========================================
+
+Copyright 2017-2019 Confluent Inc.
+
+CLI v5.4.1, Server v5.4.1 located at http://localhost:8088
+
+Having trouble? Type 'help' (case-insensitive) for a rundown of how things work!
+
+ksql>
+```
 
 ### Creating a Stream
 
