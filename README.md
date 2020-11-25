@@ -44,6 +44,8 @@ or
 docker-compose up -d
 ```
 
+The last command allow you to run <code>docker-compose</code> in the background.
+
 ### 4 - Create Topics
 
 ```bash
