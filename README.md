@@ -86,11 +86,26 @@ Show all streams;
 
 ```bash
 ksql> SHOW STREAMS;
+
+ Stream Name | Kafka Topic                     | Format
+--------------------------------------------------------
+ CLICKEVENTS | com.mywebsite.streams.clickevents | JSON
+--------------------------------------------------------
 ```
 
 ### Creating a Stream
 
 If you need run it in the background mode.
+
+```bash
+CREATE STREAM clickevents
+  (email VARCHAR,
+  timestamp VARCHAR,
+  uri VARCHAR,
+  number INTEGER)
+WITH (KAFKA_TOPIC='com.mywebsite.streams.clickevents',
+  VALUE_FORMAT='JSON');
+```
 
 ## Contributing
 
