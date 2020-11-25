@@ -176,6 +176,23 @@ CREATE TABLE a_pages AS
 SELECT * FROM clickevents EMIT CHANGES;
 ```
 
+### Describing a Table and Stream
+
+```bash
+ksql> DESCRIBE PAGES;
+
+Name                 : PAGES
+ Field       | Type
+-----------------------------------------
+ ROWTIME     | BIGINT           (system)
+ ROWKEY      | VARCHAR(STRING)  (system)
+ URI         | VARCHAR(STRING)
+ DESCRIPTION | VARCHAR(STRING)
+ CREATED     | VARCHAR(STRING)
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
 ### Deleting a Table
 
 As with Streams, we must first find the running underlying query, and then drop the table.
@@ -198,23 +215,6 @@ and then, finally, TERMINATE the query and DROP the table:
 ```bash
 TERMINATE QUERY CTAS_A_PAGES_1;
 DROP TABLE A_PAGES;
-```
-
-### Describing a Table and Stream
-
-```bash
-ksql> DESCRIBE PAGES;
-
-Name                 : PAGES
- Field       | Type
------------------------------------------
- ROWTIME     | BIGINT           (system)
- ROWKEY      | VARCHAR(STRING)  (system)
- URI         | VARCHAR(STRING)
- DESCRIPTION | VARCHAR(STRING)
- CREATED     | VARCHAR(STRING)
------------------------------------------
-For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
 ```
 
 ## Kafka CLI Basic Commands
