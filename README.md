@@ -6,15 +6,19 @@ This project show how to use KSQL (Streaming SQL Engine for Apache Kafka)
 
 For you to use this repository you will need the following software:
 
-- [Docker] (https://docs.docker.com/engine/install/)
-- [Docker Compose] (https://docs.docker.com/engine/install/)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Docker Compose](https://docs.docker.com/engine/install/)
 - Zookeeper
 - Kafka
 - KSQL Server
 
 However, only Docker and Docker Compose need is installed in your machine. All Kafka ecosystem will be embedded via docker images.
 
-## Install Softwares
+## Install Docker and Docker Compose
+
+This tutorial does not demonstrate the installation process for Docker and Docker Compose. I strongly recommend you to visit the Docker installation link. [Please click here](https://docs.docker.com/engine/install/).
+
+## Loading Images
 
 ```bash
 docker-compose up
